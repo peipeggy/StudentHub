@@ -1,0 +1,73 @@
+/* Navigation_bar.css */
+
+.nav {
+    background-color: #f9f9f9; /* 配合表單的背景顏色 */
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav .site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .nav .site-title:hover {
+    color: #007bff;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav ul li {
+    display: inline;
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #007bff; /* 與按鈕顏色一致 */
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav ul li a:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .nav ul li a:active {
+    background-color: #003f8a;
+  }
+  
+  /* 小螢幕的適配 */
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .nav ul li a {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
