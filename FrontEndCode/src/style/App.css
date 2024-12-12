@@ -3,7 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  color: #212121;
+  background-color: #dff6f0; /* 馬卡龍淺藍色 */
+  color: #333; /* 與背景形成對比的文字顏色 */
 }
 
 .container {
@@ -11,22 +12,28 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
-.title{
+
+.title {
   width: 100%;
   text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #007bff; /* 藍色文字與背景搭配 */
 }
 
 .container .student {
-  border: solid 1px #212121;
-  border-radius: .3rem;
+  border: solid 1px #007bff; /* 與背景搭配的藍色邊框 */
+  border-radius: 0.3rem;
   width: 15rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1% 2%;
+  background-color: #ffffff; /* 保持卡片白色背景 */
 }
-
 
 .container .student h1 {
   font-size: 1.25rem;
+  color: #007bff; /* 文字顏色與卡片邊框一致 */
 }

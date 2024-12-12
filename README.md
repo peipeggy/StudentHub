@@ -1,4 +1,4 @@
-# StudentHub
+# StudentHub專案
 
 ## 安裝與執行指引
 
@@ -32,3 +32,88 @@
     docker container ls
 
     ```
+    ### 3. 打開 MongoDB Compass，連接MongoDB
+
+![image]()
+
+### 4. 建立database，創建collection "studentslists"
+
+請按照以下格式建立：
+
+```
+
+{
+
+
+    userName: 'tkuee0787',
+
+    sid: 1,
+
+    name: '測試',
+
+    department: '資訊管理系',
+
+    grade: '四年級',
+
+    class: 'A',
+
+    Email: 'tkuee0787@tkuim.com',
+
+    absences: 4
+
+}
+
+```
+
+### 5. clone專案到本地
+
+打開終端機運行：
+
+```
+
+cd (你想放專案的地方)
+
+git clone https://github.com/peipeggy/StudentHub.git
+
+```
+
+### 6. 設定.env
+
+開啟VScode並複製/backend/.env.example改成.env，並設定相關數值。
+
+![image]()
+
+  
+### 7. 運行後端
+
+>[!NOTE]
+>若有需要可運行npm audit fix自動嘗試修復檢測到的安全問題
+
+```
+
+cd backend
+
+npm i
+
+# npm audit fix
+
+npm run dev
+
+```
+
+### 8. 運行前端
+
+>[!NOTE]
+>若有需要可運行npm audit fix自動嘗試修復檢測到的安全問題
+
+```
+
+cd frontend
+
+npm i
+
+# npm audit fix
+
+npm run dev
+
+```
