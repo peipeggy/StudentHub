@@ -177,23 +177,53 @@ export class UserService extends Service {
       }
     
     
-    public async deleteBySId(sid: string) {
+      public async deleteBySId(sid: string) {
         const resp: resp<any> = {
             code: 200,
             message: "",
-            body: undefined
+            body: undefined,
         };
     
+        // Step 1: 檢查 sid 是否為空值或不合法
+        if (!sid || sid.trim() === "") {
+            resp.code = 400;
+            resp.message = "Invalid sid: cannot be empty.";
+            return resp;
+        }
+    
+        const sidPattern = /^[1-9]\d*$/; // sid 必須為正整數
+        if (!sidPattern.test(sid)) {
+            resp.code = 400;
+            resp.message = "Invalid sid: must be a positive integer.";
+            return resp;
+        }
+    
         try {
+            // Step 2: 檢查 sid 是否存在於資料庫中
+            const user = await studentsModel.findOne({ sid: sid });
+            if (!user) {
+                resp.code = 404;
+                resp.message = "User not found with the provided sid.";
+                return resp;
+            }
+    
+            // Step 3: 執行刪除操作
             const res = await studentsModel.deleteOne({ sid: sid });
-            resp.message = "success";
-            resp.body = res;
+            if (res.deletedCount === 1) {
+                resp.message = "Success: User deleted.";
+                resp.body = res;
+            } else {
+                resp.code = 500;
+                resp.message = "Deletion failed due to unknown reasons.";
+            }
         } catch (error) {
-            resp.message = error as string;
+            // Step 4: 捕獲資料庫操作錯誤
             resp.code = 500;
+            resp.message = `Server error: ${error}`;
         }
     
         return resp;
     }
+    
     
 }
