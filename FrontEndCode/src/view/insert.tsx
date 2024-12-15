@@ -17,26 +17,26 @@ export default function Insert() {
     absences: 0,
   });
 
-  // 处理输入框变化
+  // 處理輸入表單變化
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 提交表单，將表单数据发送到后端
+  // 提交表單，將表單資料發送到後端
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // 使用 asyncPost 发起 POST 请求到后端 API
-    const response = await asyncPost(api.insertOne, formState); // 发送 POST 请求，传递表单数据到后端
+    // 使用 asyncPost 發起 POST 請求道後端 API
+    const response = await asyncPost(api.insertOne, formState); // 發送 POST 请求，傳遞表單資料到後端
 
-    if (response.code === 200) { // 假设后端返回成功的状态
+    if (response.code === 200) { // 假設後端返回成功的狀態
       alert('學生資料已成功新增');
     } else {
       alert('新增學生失敗');
     }
 
-    // 重设表单状态
+    // 重設表單狀態
     setFormState({
       userName: '',
       sid: '',

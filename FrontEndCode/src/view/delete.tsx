@@ -5,9 +5,9 @@ import Navigation_bar from './Navigation_bar';
 import '../style/delete.css'
 
 export default function Delete() {
-  const [studentId, setStudentId] = useState<string>(''); // 使用 useState 存储 studentId
+  const [studentId, setStudentId] = useState<string>(''); // 使用 useState 儲存 studentId
 
-  // 更新 studentId 状态
+  // 更新 studentId 狀態
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setStudentId(e.target.value);
   };
@@ -15,10 +15,10 @@ export default function Delete() {
   // 刪除操作
   const handleDelete = async () => {
     if (window.confirm('確認要刪除此學生嗎？')) {
-      // 调用 asyncDelete 函数，删除后端数据库中的记录
-      const response = await asyncDelete(api.deleteBySId, { "sid" : studentId }); // 传递 studentId 删除数据
+      // 調用 asyncDelete 函數，刪除後端資料庫中的記錄
+      const response = await asyncDelete(api.deleteBySId, { "sid" : studentId }); // 傳遞 studentId 刪除數據
 
-      if (response.message === "success") { // 假设后端返回成功的状态
+      if (response.message === "success") { // 假設後端返回成功的狀態
         alert('學生資料已成功刪除');
         setStudentId(''); // 清空输入框
       } else {

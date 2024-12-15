@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Student } from '../interface/Student';
-import { asyncPut } from '../utils/fetch'; // 引入 asyncPut 函数
+import { asyncPut } from '../utils/fetch'; // 引入 asyncPut 函數
 import { api } from '../enum/api';
 import Navigation_bar from './Navigation_bar';
 import '../style/update.css'
@@ -28,12 +28,12 @@ export default function Update() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // 调用 asyncPut 函数发送 PUT 请求来更新数据库中的学生记录
-    const response = await asyncPut(api.UpdateByUserName, formState); // 传递表单数据作为请求体
+    // 調用 asyncPut 函數發送 PUT 請求來更新資料庫中的學生記錄
+    const response = await asyncPut(api.UpdateByUserName, formState); // 傳遞表單資料作為請求主體
 
     if (response.message === "update success") {
       alert('學生資料已成功更新');
-      // 如果更新成功，您可以执行后续操作，比如重置表单或跳转页面
+      // 如果更新成功，您可以執行後續操作，比如重置表單或跳轉頁面
     } else {
       alert('更新學生資料失敗');
     }
