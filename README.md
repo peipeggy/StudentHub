@@ -325,3 +325,14 @@ npm run dev
     }
 
     ```
+## 架構圖
+
+![架構圖](https://github.com/peipeggy/StudentHub/blob/main/Images/Architecture%20diagram.drawio.png)
+
+## 流程圖
+<img src="https://github.com/peipeggy/StudentHub/blob/main/Images/insertOneFloowChart.drawio.png" width="700" alt="新增學生">  
+<img src="https://github.com/peipeggy/StudentHub/blob/main/Images/UpdateByUserNameFlowChart.drawio.png" width="700" alt="更新學生">  
+<img src="https://github.com/peipeggy/StudentHub/blob/main/Images/deleteBySidFlowChart.drawio.png" width="700" alt="刪除學生">  
+
+## demo
+[網站介紹影片](https://youtu.be/fy4REof8ceg)
